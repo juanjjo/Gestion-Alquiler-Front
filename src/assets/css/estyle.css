@@ -1,0 +1,29 @@
+/*login*/
+#layout-login {
+  background:url(../img/light-bg.jpg);
+    background-color: cornflowerblue;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form_standar{
+    height: 320px;
+    border-radius: 10px;
+  }
+
+  @media screen and (min-width: 992px) {
+    #login {
+      width: 660px;
+    }
+    #auth-login {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    #login {
+      width: 277px;
+      height: 320px;
+    }
+  }

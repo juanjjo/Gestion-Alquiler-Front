@@ -1,0 +1,25 @@
+<div class="container-fluid" id="layout-login">
+  <div class="row  bg-white p-3  form_standar" id="login">
+    <div class="col-12 col-lg-6 d-none d-lg-block" id="logo-img">
+      <img src="../../../assets/img/logo-login.png" alt="">
+    </div>
+    <div class="col-12 col-lg-6 " id="auth-login">
+      <h4 class="mb-2  card-title">Bienvenido</h4>
+      <p class="mb-3">Ingresa tu usuario y contraseña</p>
+      <form>
+        <div class="col-sm-12">
+          <input type="email" class="form-control form-control-md" id="colFormLabelSm" placeholder="usuario">
+        </div>
+        <div class="col-sm-12 mt-4">
+          <input type="email" class="form-control form-control-md" id="colFormLabelSm" placeholder="contraseña">
+        </div>
+        <div class=" mb-3 mt-2 restore_password text-right">
+          <a [routerLink]="['/recuperarpassword']">Olvidé mi contraseña</a>
+        </div>
+        <div class="col-4 ">
+          <a class="btn btn-primary btn-lg btn-block" >Entrar</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
