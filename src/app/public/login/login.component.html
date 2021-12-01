@@ -6,37 +6,41 @@
     <div class="col-12 col-lg-6 " id="auth-login">
       <h4 class="mb-2  card-title">Bienvenido</h4>
       <p class="mb-3">Ingresa tu usuario y contraseña</p>
-      <form [formGroup]="formLogin"
-      (ngSubmit)="onSubmit()">
+      <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" class=".needs-validation">
         <div class="col-sm-12">
-          <input
-          type="email"
-          class="form-control form-control-md"
-          id="colFormLabelSm"
-          formControlName="usuario"
-          [ngClass]="{'is-invalid': form.usuario.errors}"
-          placeholder="usuario">
+          <input type="email"
+           class="form-control form-control-md"
+           id="usuario_input" formControlName="usuario"
+           [ngClass]="{ 'is-invalid': usuarioValidation || form.usuario.invalid && form.usuario.dirty }"
+
+            required
+            placeholder="usuario">
         </div>
 
-          <div class="invalid-feedback d-block" *ngIf="form.usuario.errors">
-              El usuario o contraseña es incorrecto.
-          </div>
+        <div class="invalid-feedback d-block" *ngIf="(usuarioValidation || form.usuario.invalid && form.usuario.dirty)">
+          Este campo es requerido..
+        </div>
 
         <div class="col-sm-12 mt-4">
           <input type="text"
-          class="form-control form-control-md"
-          id="colFormLabelSm"
-          formControlName="password"
-          ngClass="{'is-invalid': form.password.errors}"
-          placeholder="contraseña">
+           class="form-control form-control-md"
+            id="password_input"
+             formControlName="password"
+            [ngClass]="{'is-invalid': passwordValidation || form.password.invalid && form.password.dirty}"
+            required
+             placeholder="contraseña">
         </div>
-
+        <div class="invalid-feedback d-block" *ngIf=" passwordValidation || form.password.invalid && form.password.dirty">
+          Este campo es requerido..
+        </div>
+        <!-- <div class="invalid-feedback d-block">
+          El usuario o contraseña son incorrecto..
+      </div> -->
         <div class=" mb-3 mt-2 restore_password text-right">
           <a [routerLink]="['/recuperarpassword']">Olvidé mi contraseña</a>
         </div>
         <div class="col-4 ">
-          <button type="submit" class="btn btn-primary btn-lg btn-block"
-          [disabled]="formLogin.invalid">
+          <button type="submit" class="btn btn-primary btn-lg btn-block" (click)="login()">
             Entrar
           </button>
           <!-- <a class="btn btn-primary btn-lg btn-block  type"
