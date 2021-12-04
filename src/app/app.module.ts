@@ -9,10 +9,12 @@ import { SharedModule } from './shared/shared.module';
 
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { AdminComponent } from './admin/admin.component';
 @NgModule({
   declarations: [
     AppComponent,
-    PublicComponent
+    PublicComponent,
+    AdminComponent
   ],
   imports: [
     AppRoutingModule,

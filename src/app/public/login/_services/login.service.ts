@@ -2,20 +2,41 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { LoginUser } from '../_models/loginuser';
+import { map } from "rxjs/operators";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LoginService {
-  apiLogin = environment.apiURL+"auth/login";
-constructor(private http : HttpClient) { }
+  apiLogin = environment.apiURL + 'auth/login';
+  // apiLogin = "http://localhost:8000/api/auth/login";
+  constructor(private http: HttpClient) {}
 
-loginUser(usuario: string, password: string): Observable<any> {
-  const httpOptions = {
-    headers : new HttpHeaders({
-      "Content-Type": "application/json",
-    })
+  headers: HttpHeaders = new HttpHeaders({
+    'Content-Type': 'application/json',
+  });
+
+  loginUser(usuario: string, password: string): Observable<any> {
+    // console.log(this.http
+    //   .post<LoginUser>(
+    //     this.apiLogin,
+    //     { usuario, password },
+    //     { headers: this.headers }
+    //   )
+    //   .pipe(map(success => success)));
+    return this.http
+      .post<LoginUser>(
+        this.apiLogin,
+        { usuario, password },
+        { headers: this.headers }
+      )
+      .pipe(map(success => success.success));
+    // const httpOptions = {
+    //   headers: new HttpHeaders({
+    //     'Content-Type': 'application/json',
+    //   }),
+    // };
+    // return this.http.post(this.apiLogin, { usuario, password }, httpOptions);
   }
-  return this.http.post(this.apiLogin,{usuario,password },httpOptions);
-}
 }

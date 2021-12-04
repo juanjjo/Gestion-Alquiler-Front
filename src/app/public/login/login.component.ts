@@ -7,6 +7,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +25,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private loginService: LoginService,
     private fb: FormBuilder,
-    private spinner: NgxSpinnerService
+    private spinner: NgxSpinnerService, private router: Router
   ) {}
 
   ngOnInit() {
@@ -52,11 +53,6 @@ export class LoginComponent implements OnInit {
       }
     });
   }
-  prueba() {
-    /** spinner starts on init */
-
-
-  }
   /**
    * metodo de login
    */
@@ -66,10 +62,14 @@ export class LoginComponent implements OnInit {
       this.usuario = this.formLogin.value.usuario;
       this.password = this.formLogin.value.password;
       this.loginService.loginUser(this.usuario, this.password).subscribe(
-        (result) => {
-          alert('usuario correcto');
+        success => {
+          localStorage.setItem("UserData", JSON.stringify(success.data));
+          localStorage.setItem("tokens", success.access_token);
+
+          setTimeout(() => {
+            this.router.navigate(['/dashboard']);
             this.spinner.hide();
-            5000;
+          }, 3000);
         },
         (error) => {
           this.spinner.hide();
