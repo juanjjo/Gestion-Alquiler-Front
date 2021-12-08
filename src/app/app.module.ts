@@ -10,13 +10,15 @@ import { SharedModule } from './shared/shared.module';
 import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { AdminComponent } from './admin/admin.component';
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
     PublicComponent,
-    AdminComponent
+    AdminComponent,
   ],
   imports: [
+    CommonModule,
     AppRoutingModule,
     BrowserModule,
     SharedModule,

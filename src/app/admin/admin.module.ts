@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
         FormsModule,
         ReactiveFormsModule,
         NgxSpinnerModule,
+
     ],
     declarations: [
       HomeComponent

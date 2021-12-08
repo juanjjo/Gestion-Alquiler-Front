@@ -5,26 +5,26 @@ import { FooterComponent } from './footer/footer.component';
 import { MenuHorizontalComponent } from './menu-horizontal/menu-horizontal.component';
 import { RouterModule } from '@angular/router';
 import { NavComponent } from './nav/nav.component';
+import { ToggleFullscreenDirectiveDirective } from './directives/toggle-fullscreen-directive.directive';
 
 @NgModule({
-  declarations: [
-    MenuHorizontalComponent,
-    MenuVerticalComponent,
-    FooterComponent,
-    NavComponent
-  ],
-  imports: [
-    RouterModule,
-    CommonModule,
-
-  ],
   exports:[
     NavComponent,
     MenuVerticalComponent,
     MenuHorizontalComponent,
     FooterComponent,
+  ],
+  declarations: [
+    MenuHorizontalComponent,
+    MenuVerticalComponent,
+    FooterComponent,
+    NavComponent,
+    ToggleFullscreenDirectiveDirective
+  ],
+  imports: [
+    CommonModule,
+    RouterModule,
   ]
 })
 export class SharedModule {
-  constructor(){}
 }
