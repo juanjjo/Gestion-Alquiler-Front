@@ -22,11 +22,18 @@ export class MenuVerticalComponent implements OnInit {
   ) {
 
     this.layoutService.toggleSidebar$.subscribe((isShow) => {
-      this.hideSidebar = !isShow;
+      const prueba = document.getElementsByClassName("xx")[0];
+      console.log(prueba);
+      this.hideSidebar = isShow;
       console.log(this.menuVetical);
       if (this.hideSidebar==true) {
-        this.renderer.removeClass(this.menuVetical,'wrapper');
+        // this.renderer.removeClass(this.menuVetical,'wrapper');
+        prueba.classList.remove("wrapper");
+        prueba.classList.add("wrapper-open");
       } else {
+        prueba.classList.remove("wrapper-open");
+        prueba.classList.add("wrapper");
+        // prueba.classList.add("wrapper");
         // this.renderer.addClass(this.menuVetical,'wrapper');
       }
     });
