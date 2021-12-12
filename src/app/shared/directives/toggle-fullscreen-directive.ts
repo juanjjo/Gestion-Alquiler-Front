@@ -1,9 +1,9 @@
 import { Directive, HostListener } from '@angular/core';
 import * as screenfull from 'screenfull';
 @Directive({
-  selector: '[appToggleFullscreenDirective]'
+  selector: '[appToggleFullscreen]'
 })
-export class ToggleFullscreenDirectiveDirective {
+export class ToggleFullscreenDirective{
 
   constructor() { }
 

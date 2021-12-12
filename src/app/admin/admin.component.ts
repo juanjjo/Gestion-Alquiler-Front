@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { LayoutService } from '../shared/services/layout.service';
 
 @Component({
   selector: 'app-public',
@@ -7,8 +8,17 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+  hideSidebar: boolean = true;
+  constructor(private spinner: NgxSpinnerService,
+    private layoutService: LayoutService
+  ) {
 
-  constructor(private spinner: NgxSpinnerService) { }
+     // On toggle sidebar menu
+     layoutService.toggleSidebar$.subscribe(
+      isShow => {
+        this.hideSidebar = !isShow;
+      });
+   }
 
   ngOnInit(): void {
 

@@ -1,13 +1,20 @@
 <nav class="header">
+
   <ul class="">
-    <li class="" style="font-size: x-large">
-      <a (click)="ToggleClass()" href="exspand;"><i class="{{toggleClass}} "></i></a>
+    <!-- <div class="navbar-toggle"
+    data-toggle="collapse" >
+
+  </div>-->
+    <li class="">
+      <a href="javascript:;" type="button" data-bs-toggle="collapse"
+       (click)="toggleSidebar()"
+        [attr.aria-expanded]="!isCollapsed"
+        aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i></a>
     </li>
-    <li class="" style="font-size: x-large">
-      <a (click)="ToggleClass()" href="exspand;"><i class="{{toggleClass}} "></i></a>
-    </li>
-    <li class="" style="font-size: x-large">
-      <a (click)="ToggleClass()" href="exspand;"><i class="{{toggleClass}} "></i></a>
-    </li>
+    <!-- <li class="d-none d-sm-block" style="font-size: x-large">
+      <a  data-toggle="collapse" (click)="ToggleClass()" href="javascript:;" appToggleFullscreen><i class="{{toggleClass}} "></i></a>
+    </li> -->
+
   </ul>
 </nav>

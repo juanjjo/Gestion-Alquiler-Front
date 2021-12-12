@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
+import { NgModule,  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MenuVerticalComponent } from './menu-vertical/menu-vertical.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuHorizontalComponent } from './menu-horizontal/menu-horizontal.component';
 import { RouterModule } from '@angular/router';
 import { NavComponent } from './nav/nav.component';
-import { ToggleFullscreenDirectiveDirective } from './directives/toggle-fullscreen-directive.directive';
+import { ToggleFullscreenDirective} from './directives/toggle-fullscreen-directive';
 
 @NgModule({
   exports:[
@@ -19,7 +19,7 @@ import { ToggleFullscreenDirectiveDirective } from './directives/toggle-fullscre
     MenuVerticalComponent,
     FooterComponent,
     NavComponent,
-    ToggleFullscreenDirectiveDirective
+    ToggleFullscreenDirective
   ],
   imports: [
     CommonModule,
