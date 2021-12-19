@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home.component';
+import { AlquilerComponent } from './alquiler.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: AlquilerComponent,
     data: {
-      title: 'dashboard'
+      title: 'alquiler'
     },
 
   },
@@ -18,5 +18,7 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 
-export class HomeRoutingModule {};
+export class AlquilerRoutingModule {};
+
+
 

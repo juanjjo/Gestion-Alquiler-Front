@@ -1,6 +1,8 @@
 import {
   Component,
   ElementRef,
+  HostListener,
+  NgZone,
   OnInit,
   Renderer2,
   ViewChild,
@@ -15,31 +17,50 @@ import { LayoutService } from '../services/layout.service';
 export class MenuVerticalComponent implements OnInit {
   toogleSidebar: boolean = true;
   hideSidebar: boolean;
+  resize:any;
+
   @ViewChild('MenuVertical') public menuVetical: ElementRef;
+
   constructor(
     private layoutService: LayoutService,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private ngZone:NgZone
   ) {
+    this.resize = window.innerWidth
+    console.log(this.resize);
+    window.onresize = (e) =>
+    {
+        //ngZone.run will help to run change detection
+        this.ngZone.run(() => {
+          const prueba = document.getElementsByClassName("xx")[0];
+            this.resize=window.innerWidth;
+            console.log(this.resize);
+            if (this.resize>=992) {
+              this.hideSidebar=false;
+              this.layoutService.toggleSidebarSmallScreen(this.hideSidebar);
+            }
+        });
+    };
 
     this.layoutService.toggleSidebar$.subscribe((isShow) => {
       const prueba = document.getElementsByClassName("xx")[0];
-      console.log(prueba);
+      const menuContent = document.getElementsByClassName("mm")[0];
       this.hideSidebar = isShow;
-      console.log(this.menuVetical);
-      if (this.hideSidebar==true) {
-        // this.renderer.removeClass(this.menuVetical,'wrapper');
-        prueba.classList.remove("wrapper");
-        prueba.classList.add("wrapper-open");
-      } else {
+      console.log("entro");
+      if (this.hideSidebar==false || this.resize>=992) {
         prueba.classList.remove("wrapper-open");
-        prueba.classList.add("wrapper");
-        // prueba.classList.add("wrapper");
-        // this.renderer.addClass(this.menuVetical,'wrapper');
+
+      } else {
+        prueba.classList.add("wrapper-open");
       }
     });
   }
 
+
   ngOnInit(): void {
 
   }
+
+
+
 }

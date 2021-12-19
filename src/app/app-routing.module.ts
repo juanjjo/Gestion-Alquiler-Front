@@ -5,15 +5,16 @@ import { PublicComponent } from './public/public.component';
 import { Public_ROUTES } from './shared/routes/public-routing';
 import { Admin_ROUTES } from './shared/routes/admin-routing';
 import { AuthGuard } from './shared/guards/auth.guard';
+
 const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'alquiler',
     pathMatch: 'full',
   },
-  { path: '', component: AdminComponent, data: { title: 'admin Views' }, children: Admin_ROUTES,canActivate: [AuthGuard] },
   { path: '', component: PublicComponent, data: { title: 'public Views' },children:Public_ROUTES},
+  { path: '', component: AdminComponent, data: { title: 'admin Views' }, children: Admin_ROUTES},
   // { path: '**', redirectTo: 'error', pathMatch: 'full' }
 ];
 

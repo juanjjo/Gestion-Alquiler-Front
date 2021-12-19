@@ -1,12 +1,15 @@
-<div class="vh-100 bg-info">
+<div class="vh-100 ">
 
 
-  <app-nav class="nav bg-primary "></app-nav>
+  <app-nav class="nav"></app-nav>
+  <div class="d-none d-lg-block content-menu-horizontal">
+    <app-menu-horizontal></app-menu-horizontal>
+  </div>
+  <div >
+    <app-menu-vertical></app-menu-vertical>
+  </div>
 
-  <div class="contenido bg-success">
-    <div >
-      <app-menu-vertical></app-menu-vertical>
-    </div>
+  <div class="contenido">
     <router-outlet></router-outlet>
   </div>
 

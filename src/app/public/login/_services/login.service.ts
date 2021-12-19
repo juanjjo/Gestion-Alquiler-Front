@@ -18,13 +18,6 @@ export class LoginService {
   });
 
   loginUser(usuario: string, password: string): Observable<any> {
-    // console.log(this.http
-    //   .post<LoginUser>(
-    //     this.apiLogin,
-    //     { usuario, password },
-    //     { headers: this.headers }
-    //   )
-    //   .pipe(map(success => success)));
     return this.http
       .post<LoginUser>(
         this.apiLogin,
@@ -32,11 +25,5 @@ export class LoginService {
         { headers: this.headers }
       )
       .pipe(map(success => success.success));
-    // const httpOptions = {
-    //   headers: new HttpHeaders({
-    //     'Content-Type': 'application/json',
-    //   }),
-    // };
-    // return this.http.post(this.apiLogin, { usuario, password }, httpOptions);
   }
 }

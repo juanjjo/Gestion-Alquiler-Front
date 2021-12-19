@@ -1,0 +1,24 @@
+.menu-horizontal{
+  display: flex;
+  color: black;
+  margin-top: 10px;
+}
+.menu-horizontal li{
+  margin-right: 5px;
+  margin-left: 5px;
+  color: black;
+  list-style: none;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 7px;
+}
+.menu-horizontal li a{
+  text-decoration: none;
+  color: #28117A;
+  font-size: 20px;
+}
+.menu-horizontal li:hover{
+  background-color: rgb(243, 241, 241);
+}

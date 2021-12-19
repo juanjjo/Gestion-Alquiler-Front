@@ -65,7 +65,6 @@ export class LoginComponent implements OnInit {
         success => {
           localStorage.setItem("UserData", JSON.stringify(success.data));
           localStorage.setItem("tokens", success.access_token);
-
           setTimeout(() => {
             this.router.navigate(['/dashboard']);
             this.spinner.hide();

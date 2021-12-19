@@ -1,5 +1,5 @@
 @import "layout/sidebar.css";
-
+@import "layout/menu-horizontal.css";
 /*login*/
 #layout-login {
   background:url(../img/light-bg.jpg);
