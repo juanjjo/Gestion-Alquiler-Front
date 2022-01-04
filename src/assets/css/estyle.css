@@ -1,5 +1,10 @@
 @import "layout/sidebar.css";
 @import "layout/menu-horizontal.css";
+
+
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/material.css';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
 /*login*/
 #layout-login {
   background:url(../img/light-bg.jpg);

@@ -11,6 +11,8 @@ import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { AdminComponent } from './admin/admin.component';
 import { CommonModule } from '@angular/common';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +27,8 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
+    NgxDatatableModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiURL:'https://alquileresback.herokuapp.com/api/'
+  apiURL:'http://localhost:8000/api/'
+  // apiURL:'https://alquileresback.herokuapp.com/api/'
 };
 
 /*

@@ -11,5 +11,9 @@ export const Admin_ROUTES: Routes = [
     path: 'alquiler',
     loadChildren: () => import('../../admin/alquiler/alquiler.module').then(m => m.AlquilerModule)
   },
+  {
+    path: 'local',
+    loadChildren: () => import('../../admin/local/local.module').then(m => m.LocalModule)
+  },
 
 ];

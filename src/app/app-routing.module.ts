@@ -10,7 +10,7 @@ const routes: Routes = [
 
   {
     path: '',
-    redirectTo: 'alquiler',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
   { path: '', component: PublicComponent, data: { title: 'public Views' },children:Public_ROUTES},

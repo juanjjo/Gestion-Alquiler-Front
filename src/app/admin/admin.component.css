@@ -3,11 +3,9 @@
   width: 90%;
 }
 .contenido{
-  height: 94%;
-  display: flex;
-  justify-content: center;
   margin-left: 5%;
   width: 90%;
+  padding: 0;
 }
 .backgound{
   background-color: rgba(0, 0, 0, .5);

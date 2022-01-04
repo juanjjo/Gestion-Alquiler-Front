@@ -1,14 +1,13 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ColumnMode, DatatableComponent, NgxDatatableModule, SelectionType } from '@swimlane/ngx-datatable';
-import { AlquilerService } from './services/alquiler.service';
-
+import { LocalService } from './services/local.service';
 
 @Component({
-  selector: 'app-alquiler',
-  templateUrl: './alquiler.component.html',
-  styleUrls: ['./alquiler.component.css']
+  selector: 'app-local',
+  templateUrl: './local.component.html',
+  styleUrls: ['./local.component.css']
 })
-export class AlquilerComponent {
+export class LocalComponent implements OnInit {
   token: string;
   currentUser: string;
   l
@@ -20,12 +19,10 @@ export class AlquilerComponent {
   // private
   private tempData = [];
   public ColumnMode = ColumnMode;
+  constructor(private serviceLocal: LocalService) { }
 
-  constructor(private alquilerService: AlquilerService) {
-
-  }
   ngOnInit(): void {
-    this.alquilerService.getListCoporativos().subscribe(
+    this.serviceLocal.getListCoporativos().subscribe(
       (result)=>{
         this.rows = result['data'];
         console.log(result);
