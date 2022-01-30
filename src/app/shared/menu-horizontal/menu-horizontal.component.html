@@ -1,13 +1,16 @@
 <div class="">
   <ul class="menu-horizontal">
-    <li>
-      <a href="javascript:void(0)" routerLink="/dashboard">Deshboard</a>
+    <li [ngClass]="{'activo': isActive('/dashboard')}">
+      <a href="javascript:void(0)"  routerLink="/dashboard"
+       >Deshboard</a>
     </li>
-    <li>
-      <a href="javascript:void(0)" routerLink="/local">Local</a>
+    <li [ngClass]="{'activo': isActive('/local')}" >
+      <a href="javascript:void(0)" routerLink="/local"
+      >Local</a>
     </li>
-    <li>
-      <a href="javascript:void(0)" routerLink="/alquiler">alquiler</a>
+    <li [ngClass]="{'activo': isActive('/alquiler')}">
+      <a href="javascript:void(0)" routerLink="/alquiler"
+      >alquiler</a>
     </li>
   </ul>
 </div>

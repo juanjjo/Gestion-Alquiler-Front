@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -11,7 +12,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
         FormsModule,
         ReactiveFormsModule,
         NgxSpinnerModule,
-
+        NgbModule,
     ],
     declarations: [
 

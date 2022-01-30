@@ -4,7 +4,6 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LocalComponent } from './local.component';
 import { LocalRoutingModule } from './local-routing.module';
-import { NgbAlertModule, NgbPagination } from '@ng-bootstrap/ng-bootstrap';
 @NgModule({
   imports: [
     CommonModule,
@@ -12,8 +11,6 @@ import { NgbAlertModule, NgbPagination } from '@ng-bootstrap/ng-bootstrap';
     NgxDatatableModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbPagination,
-    NgbAlertModule
   ],
   declarations: [LocalComponent]
 })

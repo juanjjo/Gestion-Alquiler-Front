@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { PublicRoutingModule } from './public-routing.module';
 import {  FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { NgbPagination } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -14,7 +14,7 @@ import { NgbPagination } from '@ng-bootstrap/ng-bootstrap';
         FormsModule,
         ReactiveFormsModule,
         NgxSpinnerModule,
-        NgbPagination
+        NgbModule
         // FormsModule ,
         // ReactiveFormsModule,
         // NgbModule,

@@ -1,7 +1,7 @@
 <!-- Filter Datatables -->
-<div>
-  <h3>
-    Bootstrap Theme
+<div class="margenes">
+  <h3 class=" text-center">
+    Gestion Locales
     <small>
       <a
         href="https://github.com/swimlane/ngx-datatable/blob/master/src/app/basic/bootstrap.component.ts"
@@ -11,7 +11,7 @@
       </a>
     </small>
   </h3>
-  <fieldset class="form-group">
+  <!-- <fieldset class="form-group">
     <label>MOSTRAR
       <select name="users-list-select"
         class="form-control form-control-sm d-inline-block width-100 p-right-25 pl-4 mx-1"
@@ -26,7 +26,20 @@
       <input id="ngx-filter-ref" class="form-control form-control-sm d-inline-block width-200 ml-1"
         type="text" (keyup)="filterUpdate($event)" />
     </label>
-  </fieldset>
+  </fieldset> -->
+
+
+<!-- <ul ngbNav #nav="ngbNav" class="nav-tabs">
+  <li ngbNavItem>
+    <a ngbNavLink>First</a>
+    <ng-template ngbNavContent>First content</ng-template>
+  </li>
+  <li ngbNavItem>
+    <a ngbNavLink>Second</a>
+    <ng-template ngbNavContent>Second content</ng-template>
+  </li>
+</ul>
+<div [ngbNavOutlet]="nav"></div> -->
 
   <div class="text-center">
     <ngx-datatable
@@ -37,26 +50,26 @@
     [limit]="limitRef"
     [scrollbarH]="true"
   >
-  <ngx-datatable-column name="PISO" >
+  <ngx-datatable-column name="PISO" prop="piso">
 
   </ngx-datatable-column>
 
-  <ngx-datatable-column name="NUMERO" >
+  <ngx-datatable-column name="NUMERO" prop="numero">
 
   </ngx-datatable-column>
 
-  <ngx-datatable-column name="ESTADO"  >
+  <ngx-datatable-column name="ESTADO"  prop="estado">
 
   </ngx-datatable-column>
 
-  <ngx-datatable-column name="ANCHO"  >
+  <ngx-datatable-column name="ANCHO"  prop="ancho">
 
   </ngx-datatable-column>
-  <ngx-datatable-column name="LARGO"  >
+  <ngx-datatable-column name="LARGO"  prop="largo">
 
   </ngx-datatable-column>
 
-  <ngx-datatable-column name="PRECIO"  >
+  <ngx-datatable-column name="PRECIO"  prop="precio">
 
   </ngx-datatable-column>
 
@@ -70,6 +83,11 @@
   </ngx-datatable>
   </div>
 
+  <!-- <div>
+    <ngx-datatable [rows]="rows" [columns]="columns"> </ngx-datatable>
+  </div> -->
+
 </div>
 <!--/ Filter Datatables -->
+
 

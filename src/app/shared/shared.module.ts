@@ -6,7 +6,6 @@ import { MenuHorizontalComponent } from './menu-horizontal/menu-horizontal.compo
 import { RouterModule } from '@angular/router';
 import { NavComponent } from './nav/nav.component';
 import { ToggleFullscreenDirective} from './directives/toggle-fullscreen-directive';
-import { NgbAlertModule, NgbPagination } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   exports:[
@@ -14,7 +13,7 @@ import { NgbAlertModule, NgbPagination } from '@ng-bootstrap/ng-bootstrap';
     MenuVerticalComponent,
     MenuHorizontalComponent,
     FooterComponent,
-    
+
   ],
   declarations: [
     MenuHorizontalComponent,
@@ -26,8 +25,6 @@ import { NgbAlertModule, NgbPagination } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     CommonModule,
     RouterModule,
-    NgbAlertModule,
-    NgbPagination
   ]
 })
 export class SharedModule {

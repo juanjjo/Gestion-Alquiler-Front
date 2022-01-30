@@ -1,7 +1,6 @@
 .menu-horizontal{
   display: flex;
   color: black;
-  margin-top: 10px;
 }
 .menu-horizontal li{
   margin-right: 5px;
@@ -13,6 +12,7 @@
   padding-top: 5px;
   padding-bottom: 5px;
   border-radius: 7px;
+  margin-top: 65px;
 }
 .menu-horizontal li a{
   text-decoration: none;

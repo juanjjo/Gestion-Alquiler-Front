@@ -14,7 +14,7 @@ export class AlquilerComponent {
   l
   @ViewChild(DatatableComponent) table: DatatableComponent;
   // row data
-  public rows:any;
+  rows:any;
   public limitRef = 10;
   public URL:string="devschoolcloud.com/sa/#/";
   // private
@@ -27,10 +27,12 @@ export class AlquilerComponent {
   ngOnInit(): void {
     this.alquilerService.getListCoporativos().subscribe(
       (result)=>{
-        this.rows = result['data'];
+        this.rows = result;
         console.log(result);
       }
     )
+
+
   }
 /**
  * filterUpdate

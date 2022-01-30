@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { ColumnMode, DatatableComponent, NgxDatatableModule, SelectionType } from '@swimlane/ngx-datatable';
+import { AlquilerService } from '../alquiler/services/alquiler.service';
 import { LocalService } from './services/local.service';
 
 @Component({
@@ -13,21 +14,23 @@ export class LocalComponent implements OnInit {
   l
   @ViewChild(DatatableComponent) table: DatatableComponent;
   // row data
-  public rows:any;
+  rows:any;
   public limitRef = 10;
   public URL:string="devschoolcloud.com/sa/#/";
   // private
   private tempData = [];
   public ColumnMode = ColumnMode;
-  constructor(private serviceLocal: LocalService) { }
+  constructor(private alquilerService: AlquilerService) { }
 
   ngOnInit(): void {
-    this.serviceLocal.getListCoporativos().subscribe(
+    this.alquilerService.getListCoporativos().subscribe(
       (result)=>{
-        this.rows = result['data'];
+        this.rows = result;
         console.log(result);
       }
     )
+
+
   }
 /**
  * filterUpdate

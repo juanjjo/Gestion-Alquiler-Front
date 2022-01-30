@@ -7,7 +7,7 @@ import { NgbPagination } from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./local-detalle.component.css']
 })
 export class LocalDetalleComponent implements OnInit {
-
+  active = 1;
   constructor() { }
 
   ngOnInit() {
